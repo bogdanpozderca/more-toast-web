@@ -36,13 +36,12 @@ function getPic() {
         function (response) { $('#profilePic').attr('src', response['data']['url']) }); 
 }
 
-function storeUser(id){
+function storeUser(id,email){
     $.ajax({
             type: 'post',
             url: "../php/user.php",
-            data: {'fb_Id':id},
-            success: function(data) {
-                console.log(data);
+            data: {'fb_Id':id, 'email':email},
+            success: function() {
             }
     }); 
 
@@ -52,7 +51,6 @@ function storeUser(id){
 
 var login = function () {
     if (window.cordova.platformId == "browser") {
-        var appId = prompt("Enter FB Application ID", "779017215511360");
         facebookConnectPlugin.browserInit('779017215511360');
     }
     facebookConnectPlugin.login( ['public_profile','email','user_friends']); 
@@ -64,7 +62,7 @@ var login = function () {
                 $('#title').html(response['name']);
                 getPic();
 
-                storeUser(response['id']);
+                storeUser(response['id'], response['email']);
             }); 
     });
 
