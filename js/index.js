@@ -39,7 +39,7 @@ function getPic() {
 function storeUser(id){
     $.ajax({
             type: 'post',
-            url: "http://moretoast.azurewebsites.net/php/user.php",
+            url: "php/user.php",
             data: {'fb_Id':id},
             success: function(data) {
                 console.log(data);
