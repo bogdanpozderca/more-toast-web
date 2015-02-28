@@ -30,7 +30,6 @@ var app = {
     }
 };
 
-
 function getPic() {
     facebookConnectPlugin.api( "me/picture?redirect=false",
         function (response) { $('#profilePic').attr('src', response['data']['url']) },
@@ -44,7 +43,7 @@ function getPic() {
 var login = function () {
     if (window.cordova.platformId == "browser") {
         var appId = prompt("Enter FB Application ID", "779017215511360");
-        facebookConnectPlugin.browserInit('779017215511360', function(){console.log(response)}, function(){console.log(response)});
+        facebookConnectPlugin.browserInit('779017215511360');
     }
     facebookConnectPlugin.login( ['public_profile','email','user_friends']); 
     $('.fbli').fadeOut('slow', function() {
@@ -54,6 +53,13 @@ var login = function () {
             function (response) { 
                 $('#title').html(response['name']);
                 getPic();
+
+                $.ajax({
+                        url: "http://toast.audiolyze.com/php/user.php",
+                        data: {'user_id':response['id']},
+                        success: function(data) {
+                        }
+                }); 
             }); 
     });
 

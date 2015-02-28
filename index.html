@@ -1,188 +1,186 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.scrolly.min.js"></script>
-		<script src="js/jquery.scrollzer.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>		
-		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
-		<script src="js/index.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-wide.css" />
-			<link rel="stylesheet" href="css/font-awesome.min.css" />
-		</noscript>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
-	</head>
-	<body>
-		<div id="fb-root"></div>
-		<!-- Header -->
-			<div id="header" class="skel-layers-fixed">
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.scrolly.min.js"></script>
+	<script src="js/jquery.scrollzer.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
+	<script src="js/index.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-wide.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+	</noscript>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+</head>
+<body>
+<div id="fb-root"></div>
+<!-- Header -->
+<div id="header" class="skel-layers-fixed">
 
-				<div class="top">
+	<div class="top">
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img id='profilePic' alt="" /></span>
-							<h1 id="title"></h1>
-						</div>
+		<!-- Logo -->
+		<div id="logo">
+			<span class="image avatar48"><img id='profilePic' alt="" /></span>
+			<h1 id="title"></h1>
+		</div>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<!--
-							
-								Prologue's nav expects links in one of two formats:
-								
-								1. Hash link (scrolls to a different section within the page)
-								
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+		<!-- Nav -->
+		<nav id="nav">
+			<!--
 
-								2. Standard link (sends the user to another page/site)
+                Prologue's nav expects links in one of two formats:
 
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-							
-							-->
-							<ul>
-								<li><a href="#list" id="list-link" class="skel-layers-ignoreHref"><span class="icon fa-home">List</span></a></li>
-								<li><a href="#group" id="list-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Group Items</span></a></li>
-								<li><a class="event listening fblo skel-layers-ignoreHref" style='display:none' onclick="logout();"><span class="fa fa-facebook-official">Logout</span></a></li>
-							</ul>
-						</nav>
-						
+                1. Hash link (scrolls to a different section within the page)
+
+                   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+                2. Standard link (sends the user to another page/site)
+
+                   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+            -->
+			<ul>
+				<li><a href="#list" id="list-link" class="skel-layers-ignoreHref"><span class="icon fa-list">Your List</span></a></li>
+				<li><a href="#group" id="list-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Group Items</span></a></li>
+				<li><a class="event listening fblo skel-layers-ignoreHref" style='display:none' onclick="logout();"><span class="fa fa-facebook-official">Logout</span></a></li>
+			</ul>
+		</nav>
+
+	</div>
+
+	<div class="bottom">
+	</div>
+
+</div>
+
+<!-- Main -->
+<div id="main">
+
+	<!-- Intro -->
+	<section id="top" class="one dark cover">
+		<div class="container">
+
+			<header>
+				<h2 class="alt">Hi! I'm <strong>Prologue</strong>, a free responsive<br />
+					site template designed by HTML5 UP.</h2>
+			</header>
+
+			<footer>
+				<div class="app">
+					<div class="event listening button fbli" onclick="login();">Login with Facebook</div>
 				</div>
-				
-				<div class="bottom">
+			</footer>
+
+		</div>
+	</section>
+	<!-- Portfolio -->
+	<section id="list" class="three">
+		<div class="container">
+
+			<header>
+				<h2>Your List</h2>
+			</header>
+			<div class="row">
+				<span class="icon fa-list"></span>
+				<h3>Dog Food</h3>
+				<p class="deadline red">1 day</p>
+			</div>
+			<div class="row">
+				<span class="icon fa-list"></span>
+				<h3>Mac and Cheese</h3>
+				<p class="deadline">6 days</p>
+			</div>
+			<div class="row">
+				<span class="icon fa-list"></span>
+				<h3>Bananas</h3>
+				<p class="deadline">8 days</p>
+			</div>
+			<div class="row">
+				<span class="icon fa-list"></span>
+				<h3>Milk</h3>
+				<p class="deadline">8 days</p>
+			</div>
+
+		</div>
+	</section>
+
+	<section id="group" class="three">
+		<div class="container">
+
+			<header>
+				<h2>Community List</h2>
+			</header>
+			<div class="row">
+				<span class="icon fa-list"></span>
+				<h3>Trash Bags</h3>
+				<p class="deadline">6 days</p>
+			</div>
+			<div class="row">
+				<span class="icon fa-list"></span>
+				<h3>Dish Soap</h3>
+				<p class="deadline">14 days</p>
+			</div>
+
+		</div>
+	</section>
+
+	<!-- Contact -->
+	<section id="contact" class="four">
+		<div class="container">
+
+			<header>
+				<h2>Contact</h2>
+			</header>
+
+			<p>Elementum sem parturient nulla quam placerat viverra
+				mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
+				donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
+				orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
+
+			<form method="post" action="#">
+				<div class="row 50%">
+					<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
+					<div class="6u"><input type="text" name="email" placeholder="Email" /></div>
 				</div>
-			
-			</div>
+				<div class="row 50%">
+					<div class="12u">
+						<textarea name="message" placeholder="Message"></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="12u">
+						<input type="submit" value="Send Message" />
+					</div>
+				</div>
+			</form>
 
-		<!-- Main -->
-			<div id="main">
+		</div>
+	</section>
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
+</div>
 
-							<header>
-								<h2 class="alt">Hi! I'm <strong>Prologue</strong>, a free responsive<br />
-								site template designed by HTML5 UP.</h2>
-							</header>
-							
-							<footer>
-								<div class="app">
-						            <div class="event listening button fbli" onclick="login();">Login with Facebook</div>
-						        </div>
-							</footer>
+<!-- Footer -->
+<div id="footer">
 
-						</div>
-					</section>
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-					
-							<header>
-								<h2>Portfolio</h2>
-							</header>
-							
-							<!--<p>Vitae natoque dictum etiam semper magnis enim feugiat convallis convallis-->
-							<!--egestas rhoncus ridiculus in quis risus amet curabitur tempor orci penatibus.-->
-							<!--Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis -->
-							<!--fusce hendrerit lacus ridiculus.</p>-->
-						
-							<div class="row">
-								<div class="4u">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-										<header>
-											<h3>Ipsum Feugiat</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-										<header>
-											<h3>Rhoncus Semper</h3>
-										</header>
-									</article>
-								</div>
-							</div>
+	<!-- Copyright -->
+	<ul class="copyright">
+		<li>&copy; Burnt Toast LLC. All rights reserved.</li><li>Design: Team Toast</li>
+	</ul>
 
-						</div>
-					</section>
+</div>
 
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
-
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-							
-							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus 
-							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae 
-							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem 
-							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper 
-							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec 
-							ornare iaculis.</p>
-
-						</div>
-					</section>
-			
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
-
-							<header>
-								<h2>Contact</h2>
-							</header>
-
-							<p>Elementum sem parturient nulla quam placerat viverra 
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia 
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc 
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-							
-							<form method="post" action="#">
-								<div class="row 50%">
-									<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u"><input type="text" name="email" placeholder="Email" /></div>
-								</div>
-								<div class="row 50%">
-									<div class="12u">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-								</div>
-								<div class="row">
-									<div class="12u">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
-
-						</div>
-					</section>
-			
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-				
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Burnt Toast LLC. All rights reserved.</li><li>Design: Team Toast</li>
-					</ul>
-				
-			</div>
-
-	</body>
+</body>
 </html>
