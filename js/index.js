@@ -36,7 +36,16 @@ function getPic() {
         function (response) { $('#profilePic').attr('src', response['data']['url']) }); 
 }
 
+function storeUser(id){
+    $.ajax({
+            url: "http://moretoast.azurewebsites.net/js/user.php",
+            data: {'fb_Id':id},
+            success: function(data) {
+                console.log(data);
+            }
+    }); 
 
+}
 
 
 
@@ -54,12 +63,7 @@ var login = function () {
                 $('#title').html(response['name']);
                 getPic();
 
-                $.ajax({
-                        url: "http://toast.audiolyze.com/php/user.php",
-                        data: {'user_id':response['id']},
-                        success: function(data) {
-                        }
-                }); 
+                storeUser(response['id']);
             }); 
     });
 
